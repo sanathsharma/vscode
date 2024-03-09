@@ -1,0 +1,88 @@
+{
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 2,
+	"editor.fontFamily": "'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
+	"editor.minimap.enabled": false,
+	"editor.inlayHints.enabled": "on",
+	"editor.inlayHints.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"editor.quickSuggestions": {
+		"other": "off",
+		"comments": "on",
+		"strings": "on"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "explicit",
+		"source.fixAll": "always",
+		"source.sortImports": "always",
+	},
+	"workbench.startupEditor": "none",
+	"workbench.statusBar.visible": false,
+	"workbench.colorTheme": "GitHub Dark",
+	"explorer.compactFolders": false,
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	// git
+	"diffEditor.ignoreTrimWhitespace": false,
+	// rust
+	"[rust]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+	},
+	// javascript
+	"javascript.preferences.quoteStyle": "double",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "vscode.typescript-language-features",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always",
+		},
+	},
+	// typescript
+	"typescript.preferences.quoteStyle": "double",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "vscode.typescript-language-features",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always",
+		},
+	},
+	// react 
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "vscode.typescript-language-features",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "always",
+		},
+	},
+	// html
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features",
+	},
+	// css
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features",
+	},
+	// json
+	"[json]": {
+		"editor.quickSuggestions": {
+			"strings": false
+		},
+		"editor.suggest.insertMode": "replace",
+		"editor.formatOnSave": true,
+	},
+	// vim
+	"vim.smartRelativeLine": true,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"k"
+			],
+			"after": [
+				"<esc>"
+			]
+		},
+	],
+	"vim.useSystemClipboard": true
+}
