@@ -2,13 +2,15 @@
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 2,
 	"editor.fontFamily": "'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
+	"editor.fontSize": 13,
 	"editor.minimap.enabled": false,
+	"editor.renderWhitespace": "all",
 	"editor.inlayHints.enabled": "on",
 	"editor.inlayHints.fontFamily": "JetBrainsMono Nerd Font Mono",
 	"editor.quickSuggestions": {
 		"other": "off",
-		"comments": "on",
-		"strings": "on"
+		"comments": "off",
+		"strings": "off"
 	},
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": "explicit",
@@ -16,10 +18,14 @@
 		"source.sortImports": "always",
 	},
 	"workbench.startupEditor": "none",
-	"workbench.statusBar.visible": false,
-	"workbench.colorTheme": "GitHub Dark",
+	"workbench.colorTheme": "Coldark - Dark",
+	"breadcrumbs.filePath": "on",
+	"breadcrumbs.symbolPath": "off",
 	"explorer.compactFolders": false,
-	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.letterSpacing": 1,
+	"zenMode.fullScreen": false,
 	// git
 	"diffEditor.ignoreTrimWhitespace": false,
 	// rust
@@ -70,6 +76,7 @@
 		},
 		"editor.suggest.insertMode": "replace",
 		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "vscode.json-language-features",
 	},
 	// vim
 	"vim.smartRelativeLine": true,
@@ -84,5 +91,92 @@
 			]
 		},
 	],
-	"vim.useSystemClipboard": true
+	"vim.normalModeKeyBindings": [
+		// NAVIGATION
+		// switch b/w buffers
+		{ "before": ["<C-h>"], "commands": [":bprevious"] },
+		{ "before": ["<C-l>"], "commands": [":bnext"] },
+
+		// splits
+		{ "before": ["leader", "v"], "commands": [":vsplit"] },
+		{ "before": ["leader", "s"], "commands": [":split"] },
+
+		// panes
+		{
+			"before": ["leader", "h"],
+			"commands": ["workbench.action.focusLeftGroup"]
+		},
+		{
+			"before": ["leader", "j"],
+			"commands": ["workbench.action.focusBelowGroup"]
+		},
+		{
+			"before": ["leader", "k"],
+			"commands": ["workbench.action.focusAboveGroup"]
+		},
+		{
+			"before": ["leader", "l"],
+			"commands": ["workbench.action.focusRightGroup"]
+		},
+		// NICE TO HAVE
+		{ "before": ["leader", "w"], "commands": [":w!"] },
+		{ "before": ["leader", "q"], "commands": [":q!"] },
+		{ "before": ["leader", "x"], "commands": [":x!"] },
+		{
+			"before": ["[", "d"],
+			"commands": ["editor.action.marker.prev"]
+		},
+		{
+			"before": ["]", "d"],
+			"commands": ["editor.action.marker.next"]
+		},
+		{
+			"before": ["<leader>", "c", "a"],
+			"commands": ["editor.action.quickFix"]
+		},
+		{ "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+		{ "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+		// defination related commands
+		{
+			"before": ["g", "h"],
+			"commands": ["editor.action.showDefinitionPreviewHover"]
+		},
+		{
+			"before": ["g", "d"],
+			"commands": ["editor.action.revealDefinition"]
+		},
+		{
+			"before": ["g", "r"],
+			"commands": ["references-view.findReferences"]
+		},
+		{
+			"before": ["g", "i"],
+			"commands": ["references-view.findImplementations"]
+		},
+		{
+			"before": ["f", "f"],
+			"commands": ["actions.find"]
+		},
+		{
+			"before": ["f", "a"],
+			"commands": ["workbench.action.findInFiles"]
+		},
+		// editor closing
+		{ "before": ["<C-k>", "w"], "commands": ["workbench.action.closeEditorsInGroup"] },
+		{ "before": ["<C-k>", "<C-w>"], "commands": ["workbench.action.closeAllEditors"] },
+	],
+	"vim.useSystemClipboard": true,
+	"vim.leader": "<space>",
+	"maptz.regionfolder": {
+		"[rust]": {                                      //Language selector
+			"foldEnd": "// endregion: --- [NAME]",                    //Text inserted at the end of the fold
+			"foldEndRegex": "//[\\s]*endregion:[\\s]*(.*)",          //Regex used to find fold end text.
+			"foldStart": "// region: --- [NAME]",              //Text inserted at the start of the fold.
+																									//Use the `[NAME]` placeholder to indicate
+																									//where the cursor should be placed after
+																									//insertion
+			"foldStartRegex": "//[\\s]*region:[\\s]*(.*)",  ////Regex used to find fold start text.
+			"disableFolding": false //Turn off #region folding for this language
+		}
+	}
 }
